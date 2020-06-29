@@ -164,3 +164,15 @@ function addWaypointsToPanel(waypoints){
     routeInstructionsContainer.innerHTML = '';
     routeInstructionsContainer.appendChild(nodeH3);
 }
+
+function addSummaryToPanel(summary) {
+    var summaryDiv = document.createElement('div'),
+        content = '';
+    content += '<b>Total distance</b>: ' + convertToImperial(summary.distance) + '<br/>';
+    content += '<b>Travel Time</b>: ' + summary.travelTime.toMMSS() + ' (in current traffic)';
+    summaryDiv.style.fontSize = 'small';
+    summaryDiv.style.marginLeft = '5%';
+    summaryDiv.style.marginRight = '5%';
+    summaryDiv.innerHTML = content;
+    routeInstructionsContainer.appendChild(summaryDiv);
+}
