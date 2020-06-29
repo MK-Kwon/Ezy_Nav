@@ -148,3 +148,19 @@ group.addEventListener('tap', function (evt){
 // Add the maneuvers group to the map
 map.addObject(group);
 }
+
+// Creates a series of H.map.Marker points from the route and adds them to the map
+// @param {Object} route A route as received from the H.service.RoutingService
+function addWaypointsToPanel(waypoints){
+    let nodeH3 = document.createElement('h3'),
+        waypointLabels = [],
+        i;
+    
+    for(i = 0; i < waypoints.length; i++){
+        waypointLabels.push(waypoints[i].label)
+    }
+    nodeH3.textContent = waypointLabels.join(' - ');
+
+    routeInstructionsContainer.innerHTML = '';
+    routeInstructionsContainer.appendChild(nodeH3);
+}
