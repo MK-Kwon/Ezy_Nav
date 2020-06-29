@@ -68,3 +68,23 @@ let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 // Create the default UI components
 let ui = H.ui.UI.createDefault(map, defaultLayers);
 ui.setUnitSystem(H.ui.UnitSystem.IMPERIAL);
+
+// Hold a reference to any infobubble opened
+let bubble;
+
+// Opens and closes a infobubble
+// @param {H.geo.Point} position  The location on the map
+// @param {String} text  The contents of the infobubble
+function openBubble(position, text){
+    if(!bubble){
+        bubble = new H.ui.InfoBubble(
+            position,
+            // The FO property holds the province name
+            {content: text});
+        ui.addBubble(bubble);
+    }else {
+        bubble.setPosition(position);
+        bubble.setContent(text);
+        bubble.open();
+    }
+}
