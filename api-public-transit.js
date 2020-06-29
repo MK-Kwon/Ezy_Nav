@@ -43,3 +43,7 @@ let platform = new H.service.Platform({
     useCIT: true,
     useHTTPS: true,
 });
+// let pixelRatio = window.devicePixelRatio || 1;
+// https://docs.w3cub.com/dom/window/devicepixelratio/
+let defaultLayers = platform.createDefaultLayers({
+})
