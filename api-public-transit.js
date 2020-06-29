@@ -59,3 +59,8 @@ let map = new H.Map(mapContainer,
         },
         zoom: 13
     });
+
+// Step 3. Make the map interactive
+// MapEvents enables the event system
+// Behavior implements defaul interactions for pan/zoom (also on mobile touch environments)
+let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
