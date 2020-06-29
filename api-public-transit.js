@@ -43,7 +43,19 @@ let platform = new H.service.Platform({
     useCIT: true,
     useHTTPS: true,
 });
+
 // let pixelRatio = window.devicePixelRatio || 1;
 // https://docs.w3cub.com/dom/window/devicepixelratio/
 let defaultLayers = platform.createDefaultLayers({
 })
+
+// Step 2. initialise a map (Not specifying a location will render the world map)
+let map = new H.Map(mapContainer,
+    defaultLayers.normal.map, {
+        //pixelRatio: pixelRatio
+        center: {
+            lat: -34.9285,
+            lng: 138.6007
+        },
+        zoom: 13
+    });
