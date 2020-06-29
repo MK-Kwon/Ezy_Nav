@@ -88,3 +88,27 @@ function openBubble(position, text){
         bubble.open();
     }
 }
+// Creates a H.map.Polyline from the shape of the route and adds it to the map
+// @param {Object} route A route as received from the H.service.RoutingService
+function addRouteShapeToMap(route) {
+    let lineString = new H.geo.LineString(),
+        routeShape = route.shape,
+        polyline;
+    
+    routeShape.forEach(function(point) {
+        let parts = point.split(',');
+        lineString.pushLatLngAlt(parts[0], parts[1]);
+    });
+
+    polyline = new H.map.Polyline(lineString, {
+        style: {
+            lineWidth: 4,
+            strokeColor: 'rgba(0, 128, 255, 0.7)'
+        }
+    });
+    // Add the polyline to the map
+    map.addObject(polyline);
+    // And zoom to its bounding rectangle
+    // And zoom to its bounding rectangle
+    map.setViewBounds(polyline.getBounds(), true);
+    }
