@@ -32,3 +32,6 @@ function onSuccess(result) {
 function onError(error) {
     alert('Can\'t reach the remote server');
 }
+// set up containers for the map + panel
+let mapContainer = document.getElementById('map'),
+    routeInstructionsContainer = document.getElementById('panel');
