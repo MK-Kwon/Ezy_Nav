@@ -64,3 +64,7 @@ let map = new H.Map(mapContainer,
 // MapEvents enables the event system
 // Behavior implements defaul interactions for pan/zoom (also on mobile touch environments)
 let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+// Create the default UI components
+let ui = H.ui.UI.createDefault(map, defaultLayers);
+ui.setUnitSystem(H.ui.UnitSystem.IMPERIAL);
