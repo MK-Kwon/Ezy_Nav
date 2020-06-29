@@ -35,3 +35,11 @@ function onError(error) {
 // set up containers for the map + panel
 let mapContainer = document.getElementById('map'),
     routeInstructionsContainer = document.getElementById('panel');
+
+// Step 1: initialise communication with the platform
+let platform = new H.service.Platform({
+    app_id: 'wcU125hOha6uKl56A00d',
+    app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+    useCIT: true,
+    useHTTPS: true,
+});
