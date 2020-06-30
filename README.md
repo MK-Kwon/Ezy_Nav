@@ -8,17 +8,19 @@ This repository ("Ezy_Nav") is where I built an application which offers users t
 4. Click 'GO!' button.
 5. You will see the map with directions, fastest route, weather for both starting address and destination address.
 
+
 * API 
 1. Geocoder (developers.here.com)
 2. Driving Routing (developers.here.com)
 3. Public Transit Routing (developers.here.com)
 4. Weather (openweathermap.org)
 
+
 The application is fully responsive through Materialize CSS library and interacts through Firebase.
 
 
 *Deployed Website:
-https://mk-kwon.github.io/Day-Planner/
+https://mk-kwon.github.io/Ezy_Nav/
 
 <img src="https://media.giphy.com/media/iIqi8jBWiUo85I8pCJ/giphy.gif" width:1000 height:800>
 <img src="http://drive.google.com/uc?id=1egkP2k8FdIm4_ANbnQ1jH2_90_M1cJYC">
