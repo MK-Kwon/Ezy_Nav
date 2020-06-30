@@ -19,3 +19,14 @@ function calculateRouteFromAtoBDrive(platform, waypoint0, waypoint1) {
       onError
     );
   }
+
+// This function will be called once the Routing REST API provides a response
+function onSuccess(result) {
+    let route = result.response.route[0];
+    addRouteShapeToMap(route);
+    addManueversToMap(route);
+    addWaypointsToPanel(route.waypoint);
+    addManueversToPanel(route);
+    addSummaryToPanel(route.summary);
+  }
+  
