@@ -84,3 +84,49 @@ function onError(error) {
     // And zoom to its bounding rectangle
     map.setViewBounds(polyline.getBounds(), true);
   }
+
+//  Creates a series of H.map.Marker points from the route and adds them to the map.
+// @param {Object} route A route as received from the H.service.RoutingService
+function addManueversToMap(route) {
+    var svgMarkup = '<svg width="18" height="18" ' +
+      'xmlns="http://www.w3.org/2000/svg">' +
+      '<circle cx="8" cy="8" r="8" ' +
+      'fill="#1b468d" stroke="white" stroke-width="1"  />' +
+      '</svg>',
+      dotIcon = new H.map.Icon(svgMarkup, {
+        anchor: {
+          x: 8,
+          y: 8
+        }
+      }),
+      group = new H.map.Group(),
+      i,
+      j;
+  
+    // Add a marker for each maneuver
+    for (i = 0; i < route.leg.length; i += 1) {
+      for (j = 0; j < route.leg[i].maneuver.length; j += 1) {
+        // Get the next maneuver.
+        maneuver = route.leg[i].maneuver[j];
+        // Add a marker to the maneuvers group
+        let marker = new H.map.Marker({
+          lat: maneuver.position.latitude,
+          lng: maneuver.position.longitude
+        }, {
+            icon: dotIcon
+          });
+        marker.instruction = maneuver.instruction;
+        group.addObject(marker);
+      }
+    }
+  
+    group.addEventListener('tap', function (evt) {
+      map.setCenter(evt.target.getPosition());
+      openBubble(
+        evt.target.getPosition(), evt.target.instruction);
+    }, false);
+  
+    // Add the maneuvers group to the map
+    map.addObject(group);
+  }
+  
