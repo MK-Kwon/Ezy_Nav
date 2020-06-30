@@ -34,3 +34,11 @@ function onSuccess(result) {
 function onError(error) {
     alert('Can\'t reach the remote server');
   }
+
+// Boilerplate map initialization code starts below;
+  // Set up containers for the map + panel
+  var mapContainer = document.getElementById('map'),
+    routeInstructionsContainer = document.getElementById('panel');
+  
+  var bubble;
+  
