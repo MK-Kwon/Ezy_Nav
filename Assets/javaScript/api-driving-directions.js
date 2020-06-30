@@ -42,3 +42,21 @@ function onError(error) {
   
   var bubble;
   
+  // Opens/Closes a infobubble
+  // @param 'position'   The location on the map
+  // @param 'text'   The contents of the infobubble/
+  function openBubble(position, text) {
+    if (!bubble) {
+      bubble = new H.ui.InfoBubble(
+        position,
+        // The FO property holds the province name.
+        {
+          content: text
+        });
+      ui.addBubble(bubble);
+    } else {
+      bubble.setPosition(position);
+      bubble.setContent(text);
+      bubble.open();
+    }
+  }
