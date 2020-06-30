@@ -29,4 +29,8 @@ function onSuccess(result) {
     addManueversToPanel(route);
     addSummaryToPanel(route.summary);
   }
-  
+
+// This function will be called if a communication error occurs during the JSON-P request
+function onError(error) {
+    alert('Can\'t reach the remote server');
+  }
