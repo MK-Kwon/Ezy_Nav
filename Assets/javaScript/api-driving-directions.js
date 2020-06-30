@@ -147,3 +147,17 @@ function addManueversToMap(route) {
     routeInstructionsContainer.innerHTML = '';
     routeInstructionsContainer.appendChild(nodeH3);
   }
+
+  // Creates a series of H.map.Marker points from the route and adds them to the map
+  // @praram   route   A route as received from the H.service.RoutingService
+  function addSummaryToPanel(summary) {
+    let summaryDiv = document.createElement('div'),
+      content = '';
+    content += '<b>Total distance</b>: ' + convertToImperial(summary.distance)  + 'm. <br/>';
+    content += '<b>Travel Time</b>: ' + summary.travelTime.toMMSS() + ' (in current traffic)';
+    summaryDiv.style.fontSize = 'small';
+    summaryDiv.style.marginLeft = '5%';
+    summaryDiv.style.marginRight = '5%';
+    summaryDiv.innerHTML = content;
+    routeInstructionsContainer.appendChild(summaryDiv);
+  }
