@@ -70,7 +70,7 @@ let ui = H.ui.UI.createDefault(map, defaultLayers);
 ui.setUnitSystem(H.ui.UnitSystem.IMPERIAL);
 
 // Hold a reference to any infobubble opened
-let bubble;
+var bubble;
 
 // Opens and closes a infobubble
 // @param {H.geo.Point} position  The location on the map
