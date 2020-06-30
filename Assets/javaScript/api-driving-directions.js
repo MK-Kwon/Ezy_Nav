@@ -161,3 +161,10 @@ function addManueversToMap(route) {
     summaryDiv.innerHTML = content;
     routeInstructionsContainer.appendChild(summaryDiv);
   }
+
+  function convertToImperial(distance) {
+    let miles = Math.trunc(distance / 1609.34);
+    let remainder = distance % 1609.34;
+    let feet = Math.trunc(remainder / 3.28084);
+    return (miles + " miles and " + feet + " feet.");
+  }
