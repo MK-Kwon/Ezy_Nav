@@ -33,23 +33,23 @@ function onError(error) {
     alert('Can\'t reach the remote server');
 }
 // set up containers for the map + panel
-let mapContainer = document.getElementById('map'),
+var mapContainer = document.getElementById('map'),
     routeInstructionsContainer = document.getElementById('panel');
 
-// Step 1: initialise communication with the platform
+// Step 1: initialize communication with the platform
 let platform = new H.service.Platform({
     app_id: 'wcU125hOha6uKl56A00d',
     app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
     useCIT: true,
     useHTTPS: true,
 });
-
 // let pixelRatio = window.devicePixelRatio || 1;
 // https://docs.w3cub.com/dom/window/devicepixelratio/
 let defaultLayers = platform.createDefaultLayers({
+    
 })
 
-// Step 2. initialise a map (Not specifying a location will render the world map)
+// Step 2. initialize a map (Not specifying a location will render the world map)
 let map = new H.Map(mapContainer,
     defaultLayers.normal.map, {
         //pixelRatio: pixelRatio
@@ -112,6 +112,7 @@ function addRouteShapeToMap(route) {
     // And zoom to its bounding rectangle
     map.setViewBounds(polyline.getBounds(), true);
     }
+    
 
 //  Creates a series of H.map.Marker points from the route and adds them to the map.
 // @param {Object} route A route as received from the H.service.RoutingService
@@ -149,6 +150,7 @@ group.addEventListener('tap', function (evt){
 map.addObject(group);
 }
 
+
 // Creates a series of H.map.Marker points from the route and adds them to the map
 // @param {Object} route A route as received from the H.service.RoutingService
 function addWaypointsToPanel(waypoints){
@@ -164,7 +166,6 @@ function addWaypointsToPanel(waypoints){
     routeInstructionsContainer.innerHTML = '';
     routeInstructionsContainer.appendChild(nodeH3);
 }
-
 function addSummaryToPanel(summary) {
     var summaryDiv = document.createElement('div'),
         content = '';
