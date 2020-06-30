@@ -60,3 +60,27 @@ function onError(error) {
       bubble.open();
     }
   }
+
+  // Creates a H.map.Polyline from the shape of the route and adds it to the map
+  // @param    route A route as received from the H.service.RoutingService
+  function addRouteShapeToMap(route) {
+    let strip = new H.geo.Strip(),
+      routeShape = route.shape,
+      polyline;
+  
+    routeShape.forEach(function (point) {
+      var parts = point.split(',');
+      strip.pushLatLngAlt(parts[0], parts[1]);
+    });
+  
+    polyline = new H.map.Polyline(strip, {
+      style: {
+        lineWidth: 4,
+        strokeColor: 'rgba(0, 128, 255, 0.7)'
+      }
+    });
+    // Add the polyline to the map
+    map.addObject(polyline);
+    // And zoom to its bounding rectangle
+    map.setViewBounds(polyline.getBounds(), true);
+  }
