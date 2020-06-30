@@ -80,3 +80,23 @@ html {
   ::placeholder{
     color: white;
   }
+
+  #map {
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 470px;
+    height: 420px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+  .page-footer {
+    text-align: center;
+    background-color: #06cbf4 !important;
+    margin-top: 250px;
+    padding: 10px 0;
+    opacity: 0.8;
+  }
