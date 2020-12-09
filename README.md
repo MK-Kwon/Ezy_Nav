@@ -22,7 +22,7 @@ The application is fully responsive through Materialize CSS library and interact
 *Deployed Website:
 https://mk-kwon.github.io/Ezy_Nav/
 
-<img src="https://media.giphy.com/media/iIqi8jBWiUo85I8pCJ/giphy.gif" width:1000 height:800>
-<img src="http://drive.google.com/uc?id=1egkP2k8FdIm4_ANbnQ1jH2_90_M1cJYC">
-<img src="http://drive.google.com/uc?id=1C0oBJvtM5Hq8GZYI6gKfab-QNH-Oz9iu">
+<img src="https://media.giphy.com/media/iIqi8jBWiUo85I8pCJ/giphy.gif" width ="100%" height="auto">
+<img src="http://drive.google.com/uc?id=1egkP2k8FdIm4_ANbnQ1jH2_90_M1cJYC" width ="100%" height="auto">
+<img src="http://drive.google.com/uc?id=1C0oBJvtM5Hq8GZYI6gKfab-QNH-Oz9iu" width ="100%" height="auto">
 
